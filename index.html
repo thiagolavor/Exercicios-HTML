@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <header>
+        <meta charset="UTF-8">
+        <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exercicios HTML</title>
+        <style>
+            body{
+                background-color:rgba(161, 223, 217, 0.521);
+            }
+            #conteudo {
+                padding: 30px;
+            }
+            a {
+                text-decoration: none;
+                color:rgba(252, 80, 0, 0.712);
+                font-weight: bold;
+                border: 2px solid rgba(252, 80, 0, 0.712);
+                border-radius: 30px;
+                text-align: center;
+                padding: 10px;
+                margin: 8px;
+
+            }
+            a:hover{
+                background-color:rgba(252, 80, 0, 0.712);
+                color: white;
+                box-shadow: 2px 2px 1px 1px rgb(114, 112, 112); 
+
+            }
+            a:active{
+                box-shadow: none;
+            }
+            
+            header{
+                margin-bottom: 20px;
+                color:orangered;
+                font-weight: bold;
+            }
+            footer{
+                margin-top: 20px;
+                color:orangered;
+                font-weight: bold;
+            }
+        </style>
+    </header>
+    <body>
+        <header>
+          <h3>Exercicios HTML</h3>
+        </header>
+        <nav>
+            <a href wm-nav="exercicios/teste.html">00 - Teste</a> 
+            <a href wm-nav="exercicios/texto1.html">01 - Texto1</a> 
+            <a href wm-nav="exercicios/texto2.html">02 - Texto2</a> 
+            <a href wm-nav="exercicios/listas.html">03 - Listas</a>
+            <a href wm-nav="exercicios/listasAlinhadas.html">04 - Listas Alinhadas</a>
+        </nav>
+        <section id="conteudo"></section>
+        <footer>
+            <br>
+            <h3>Curso de Web Moderno</h3>
+        </footer>
+        <script>
+            document.querySelectorAll('[wm-nav]').forEach(link => {
+                const conteudo = document.getElementById('conteudo')
+
+                link.onclick = (e) => {
+                    e.preventDefault()
+                    fetch(link.getAttribute('wm-nav'))
+                        .then(resp=> resp.text())
+                        .then(html => conteudo.innerHTML = html)
+                }
+            })
+        </script>
+    </body>
+</html>

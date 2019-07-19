@@ -1,0 +1,17 @@
+{
+  "name": "HTML",
+  "version": "1.0.0",
+  "description": "",
+  "main": "teste.js",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "y": "^0.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Thiago Lavor <thiagolavor86@gmail.com>",
+  "license": "MIT"
+}
